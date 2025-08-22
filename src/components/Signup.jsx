@@ -25,17 +25,17 @@ function Signup() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     console.log(input);
+    // const url = "http://localhost:6001/api/user/register";
+    const url= "https://contact-backend-mhqh.onrender.com/api/user/register"
+
     try {
-      const res = await fetch(
-        "https://contact-saver-omega.vercel.app/api/user/register",
-        {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-          },
-          body: JSON.stringify(input),
-        }
-      );
+      const res = await fetch(url, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(input),
+      });
       if (res.ok) {
         navigate("/");
       }

@@ -16,15 +16,14 @@ function Login1() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     console.log(input);
+    const url = "https://contact-backend-mhqh.onrender.com/api/user/login";
+    // const url = "http://localhost:6001/api/user/login";
     try {
-      const res = await fetch(
-        "https://contact-saver-omega.vercel.app/api/user/login",
-        {
-          method: "POST",
-          headers: { "Content-Type": "application/json" },
-          body: JSON.stringify(input),
-        }
-      );
+      const res = await fetch(url, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(input),
+      });
       console.log(res);
       if (!res.ok) {
       }

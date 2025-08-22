@@ -15,8 +15,10 @@ function AddNewContact() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     console.log(input);
+
     try {
-      const url = "https://contact-saver-omega.vercel.app/api/contact/create";
+      const url = "https://contact-backend-mhqh.onrender.com/api/contact/create";
+      // const url = "http://localhost:6001/api/contact/create";
       const token = localStorage.getItem("token");
       const res = await fetch(url, {
         method: "POST",

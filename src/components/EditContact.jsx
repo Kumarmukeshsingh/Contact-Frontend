@@ -24,7 +24,8 @@ function EditContact() {
     e.preventDefault();
     console.log(input);
     try {
-      const url = `https://contact-saver-omega.vercel.app/api/contact/update/${id}`;
+      const url = `https://contact-backend-mhqh.onrender.com/api/contact/update/${id}`;
+      // const url = `http://localhost:6001/api/contact/update/${id}`;
       const res = await fetch(url, {
         method: "PUT",
         headers: {
@@ -36,9 +37,9 @@ function EditContact() {
 
       const result = await res.json();
       console.log(result);
-      
+
       setInput({ name: "", email: "", phone: "" });
-      
+
       if (result.message) {
         setTimeout(() => {
           navigate("/allcontact");
@@ -58,6 +59,7 @@ function EditContact() {
         <form className="form-container " onSubmit={handleSubmit}>
           <div className="">
             <label htmlFor="name" className="">
+              <span></span>
               name : {contact.name}
             </label>
             <input

@@ -18,7 +18,8 @@ function AllContact() {
   const fetchcontact = async () => {
     // console.log(localStorage.getItem("token"));
     try {
-      const url = "https://contact-saver-omega.vercel.app/api/contact";
+      const url = "https://contact-backend-mhqh.onrender.com/api/contact";
+      // const url = "http://localhost:6001/api/contact";
       // const headers = {
       //   headers: {
       //     " Authorization": localStorage.getItem("token"),
@@ -59,7 +60,7 @@ function AllContact() {
     const token = localStorage.getItem("token");
     try {
       const res = await fetch(
-        `https://contact-saver-omega.vercel.app/api/contact/delete/${id}`,
+        `https://contact-backend-mhqh.onrender.com/api/contact/delete/${id}`,
         {
           method: "DELETE",
           headers: {
